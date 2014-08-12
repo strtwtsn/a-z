@@ -1,0 +1,1 @@
+{ "run_list": [ "recipe[nginx]","recipe[passenger]","recipe[postgresql]","recipe[wkhtmlpdf]","recipe[sphinx]" }
