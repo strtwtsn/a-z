@@ -1,3 +1,6 @@
+package "fontconfig"
+package "libxrender1"
+
 remote_file "Download wkhtml" do
 path "/home/ubuntu/downloads/wkhtmltox-0.12.1_linux-trusty-amd64.deb"
 source "http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb"
