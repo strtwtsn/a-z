@@ -1,22 +1,12 @@
-package "libmysqlclient-dev"
-package "libmysql++-dev"
-package "libmysqlclient18"
-
-
-
-remote_file "/usr/local/src/sphinx-2.1.4-release.tar.gz" do
-source "http://sphinxsearch.com/files/sphinx-2.1.4-release.tar.gz"
+remote_file "sphinx" do
+path "/home/ubuntu/downloads/sphinxsearch_2.1.9-release-0ubuntu11~trusty_amd64.deb"
+source "http://sphinxsearch.com/files/sphinxsearch_2.1.9-release-0ubuntu11~trusty_amd64.deb"
 end
 
-bash "Extract and install sphinx" do
+bash "Install sphinx" do
 user "root"
-cwd "/usr/local/src"
 code <<-EOH
-tar xvzf sphinx-2.1.4-release.tar.gz
-cd sphinx-2.1.4-release
-./configure --with-pgsql --with-mysql
-make
-checkinstall --pkgname sphinx --pkgversion 2.1.4-src --default
+cd /home/ubuntu/downloads
+dpkg -i sphinxsearch_2.1.9-release-0ubuntu11~trusty_amd64.deb
 EOH
 end
-
